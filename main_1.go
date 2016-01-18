@@ -12,6 +12,12 @@ func main() {
 	count := 1
 	// 回し続けて最大lenになったら減らす
 	for {
+		insertIndent := ((max_width - count) / 2)
+		if insertIndent > 0 {
+			for ii := 0; ii < insertIndent; ii++ {
+				fmt.Print(" ")
+			}
+		}
 		for i := 0; i < count; i++ {
 			fmt.Print("*")
 		}
@@ -31,5 +37,4 @@ func main() {
 		}
 
 	}
-
 }
