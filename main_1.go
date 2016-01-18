@@ -3,7 +3,33 @@ package main
 import (
 	"fmt"
 )
+
 // https://gist.github.com/bsoo/bd361a7fe01fc6bff068
-func Main() {
-	fmt.Println("")
+func main() {
+	max_width := 7
+	add_size := 2
+	upper := true
+	count := 1
+	// 回し続けて最大lenになったら減らす
+	for {
+		for i := 0; i < count; i++ {
+			fmt.Print("*")
+		}
+		fmt.Println("")
+		// 必要な分を吐き切ったら、次の行のために設定情報を更新する
+		if count >= max_width {
+			upper = false
+		}
+
+		if upper {
+			count += add_size
+		} else {
+			count -= add_size
+			if count <= 0 {
+				break
+			}
+		}
+
+	}
+
 }
